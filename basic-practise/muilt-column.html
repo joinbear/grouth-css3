@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>multi-column</title>
+  <style>
+    .demo {
+      width: 400px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .column-count-auto {
+      column-count:auto;
+      column-width:150px;
+    }
+    .column-count-3 {
+      column-count:3;
+    }
+    /*column-width = (width-(n-1)*font-size)/n  /!*其中n大于或等于2;并且其他值为默认值*!/*/
+  </style>
+</head>
+<body>
+  <div class="demo column-count-auto">Lorem ipsum dolor sit ... deserunt mollit anim id est laborum.</div>
+  <div class="demo column-count-3">Lorem ipsum dolor sit ... deserunt mollit anim id est laborum.</div>
+</body>
+</html>

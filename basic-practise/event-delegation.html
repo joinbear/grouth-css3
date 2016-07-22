@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<ul id="event-delegate">
+  <li class="test1 test2 test3"><a href="javascript:;" class="test3">事件委托测试</a></li>
+  <li><a href="javascript:;" class="test1 test2">事件委托测试</a></li>
+  <li  class="test1 test2"><a href="javascript:;">事件委托测试</a></li>
+  <li><a href="javascript:;" >事件委托测试</a></li>
+  <li class="test1 test3"><a href="javascript:;" >事件委托测试</a></li>
+</ul>
+<script>
+  window.addEventListener('load',function(event){
+    console.log(event);
+    console.log('i am ready!');
+  });
+  (function(window,undefined){
+    var ulObject = document.querySelector("#event-delegate");
+    ulObject.addEventListener('click',function(event){
+      var
+        nodeName = event.target.nodeName,
+        reg = new RegExp('test3'),
+        classNames = event.target.className;
+      console.log(event);
+      if(reg.exec(classNames)){
+        console.log('i click the item:'+nodeName);
+      }
+    });
+  })(window);
+
+</script>
+</body>
+</html>
